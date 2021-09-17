@@ -1,48 +1,57 @@
 import { Injectable, HttpException, HttpStatus } from '@nestjs/common';
-import { UserDTO } from 'src/dto/user.dto';
+
+import { PrismaService } from '../prisma/prisma.service';
+import {
+  User,
+  Prisma
+} from '@prisma/client';
 
 @Injectable()
 export class UserService {
-  private readonly users: UserDTO[] = [];
 
-  create(user: UserDTO) {
-    user.id = String(this.users.length + 1);
-    this.users.push(user);
-    return user;
+  constructor(private readonly prisma: PrismaService) {}
+
+  async users(params: {
+    skip?: number;
+    take?: number;
+    cursor?: Prisma.UserWhereUniqueInput;
+    where?: Prisma.UserWhereInput;
+  }): Promise<User[]> {
+    const { skip, take, cursor, where } = params;
+    return this.prisma.user.findMany({
+      skip,
+      take,
+      cursor,
+      where,
+    });
   }
 
-  findAll(): UserDTO[] {
-    return this.users;
+  async user(userWhereUniqueInput: Prisma.UserWhereUniqueInput): Promise<User | null> {
+    return this.prisma.user.findUnique({
+      where: userWhereUniqueInput,
+    });
   }
 
-  delete(id: number) {
-    if (id > this.users.length) {
-      throw new HttpException(
-        {
-          status: HttpStatus.BAD_REQUEST,
-          error: 'Dont exist the informed id.',
-        },
-        HttpStatus.BAD_REQUEST,
-      );
-    }
-    this.users.splice(Number(id) - 1, 1);
-    return;
+  async createUser(data: Prisma.UserCreateInput): Promise<User> {
+    return this.prisma.user.create({
+      data,
+    });
   }
-  update(userDTO: UserDTO) {
-    const id = parseInt(userDTO.id) - 1;
-    this.users[id] = userDTO;
-    return userDTO;
+
+  async updateUser(params: {
+    where: Prisma.UserWhereUniqueInput;
+    data: Prisma.UserUpdateInput;
+  }): Promise<User> {
+    const { where, data } = params;
+    return this.prisma.user.update({
+      data,
+      where,
+    });
   }
-  findById(id: number) {
-    if (id > this.users.length) {
-      throw new HttpException(
-        {
-          status: HttpStatus.BAD_REQUEST,
-          error: 'Dont exist the informed id.',
-        },
-        HttpStatus.BAD_REQUEST,
-      );
-    }
-    return this.users[Number(id) - 1];
+
+  async deleteUser(where: Prisma.UserWhereUniqueInput): Promise<User> {
+    return this.prisma.user.delete({
+      where,
+    });
   }
 }
