@@ -10,42 +10,31 @@ import {
   HttpStatus,
 } from '@nestjs/common';
 
+import { Prisma } from '@prisma/client';
 import { Response } from 'express';
 
-import { UserDTO } from 'src/dto/user.dto';
+import { User as UserModel } from '@prisma/client';
 import { UserService } from './user.service';
 
 @Controller('user')
 export class UserController {
   constructor(private userService: UserService) {}
 
-  @Get()
-  findAll(@Res() res: Response): Response {
-    const users = this.userService.findAll();
-    return res.status(HttpStatus.OK).json({ payload: users });
-  }
-
-  @Get(':id')
-  findById(@Param('id') id: number, @Res() res: Response): Response {
-    const user = this.userService.findById(id);
-    return res.status(HttpStatus.OK).json({ payload: user });
-  }
-
   @Post()
-  create(@Body() userDTO: UserDTO, @Res() res: Response): Response {
-    const user = this.userService.create(userDTO);
-    return res.status(HttpStatus.CREATED).json({ payload: user });
+  async signupUser(
+    @Body() userData: { name?: string; email: string },
+  ): Promise<UserModel> {
+    return this.userService.createUser(userData);
   }
 
-  @Put()
-  update(@Body() userDTO: UserDTO, @Res() res: Response): Response {
-    const user = this.userService.update(userDTO);
-    return res.status(HttpStatus.OK).json({ payload: user });
+  @Get()
+  async findAll() {
+    return await this.userService.users({}); 
   }
 
-  @Delete(':id')
-  delete(@Param('id') id: number, @Res() res: Response): Response {
-    this.userService.delete(id);
-    return res.status(HttpStatus.OK).send();
+  
+  @Get(':id')
+  async findOne(@Param('id') id: string) {
+    return await this.userService.user({ id: +id }); 
   }
 }
