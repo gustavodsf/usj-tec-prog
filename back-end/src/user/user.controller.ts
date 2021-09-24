@@ -31,7 +31,6 @@ export class UserController {
   async findAll() {
     return await this.userService.users({}); 
   }
-
   
   @Get(':id')
   async findOne(@Param('id') id: string) {
