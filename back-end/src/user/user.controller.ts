@@ -29,12 +29,11 @@ export class UserController {
 
   @Get()
   async findAll() {
-    return await this.userService.users({}); 
+    return await this.userService.users({});
   }
 
-  
   @Get(':id')
   async findOne(@Param('id') id: string) {
-    return await this.userService.user({ id: +id }); 
+    return await this.userService.user({ id: +id });
   }
 }
