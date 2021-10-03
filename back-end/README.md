@@ -11,7 +11,7 @@ __Tarefa__ - crie um CRUD para o projeto de gestão de uma propriedade rural, ab
 
 1. Para execução da tarefa crie uma branch da seguinte forma:
 
-````sh
+```sh
   git checkout -b crud/nome_do_crud
 ```
 
@@ -21,7 +21,7 @@ troque nome do crud por fazeda, caso esteja realizando o cadastro de uma fazenda
 
 criar o arquivo `.env` dentro do projeto usando como base o `.env.template`.
 
-```
+```sh
 DATABASE_URL= # url da base de dados
 PORT=         # porta que o servidor irá subir
 EXPIRESIN=    # tempo em segundos para que o jwt expire 
@@ -34,7 +34,7 @@ após  rode o comando `npm run start:dev` para inicializad o servidor de aplica�
 
 1. Estrutura do Projeto
 
-```
+```sh
 .
 ├── prism/a           # contém o schema.prisma e as migrations
 ├── src/              # armazena de fato o código do projeto
@@ -47,7 +47,7 @@ após  rode o comando `npm run start:dev` para inicializad o servidor de aplica�
 └── README.md
 ```
 
-```
+```sh
  .
     ├── ...
     ├── src/                   
