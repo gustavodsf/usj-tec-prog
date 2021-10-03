@@ -6,13 +6,13 @@ Software para apoiar o produtor a tomar decisões melhores.
 
 ```sh
 .
-├── prisma           # contém o schema.prisma e as migrations
-├── src/              # armazena de fato o código do projeto
-├── test/             # código de configuração do jest
-├── .env.template    # template o arquivo .env que deve ser criado
-├── .gitignore       # Tools and utilities
-├── package.json     # contém as dependências do projeto
-├── tslint.json      # auxilia na verificação de algumas normas de códigos, neste arquivo se define as regras
-├── tsconfig.json    # define como irá realizar a compilação do typescript para javascript.
+├── back-end/    # diretório que armazena o código do back-end;
+├── front-end/   # diretório que armazena o código do front-end;
 └── README.md
 ```
+
+1. Back-end
+o back-end está sendo criando utilizando __nest.js__, para maiores detalhes acesso o [read-me](https://github.com/gustavodsf/bov-manager/tree/main/back-end) do projeto para ter um melhor entendimento do mesmo.
+
+1. Front-end
+O front-end será realizado com __svelte__.  
