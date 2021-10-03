@@ -11,7 +11,9 @@
     "sourceMap": true,
     "lib": ["es2015"],
     "paths": {
-      "@user/*": ["src/user/*"]
+      "@user/*": ["src/user/*"],
+      "@auth/*": ["src/auth/*"],
+      "@lprisma/*": ["src/prisma/*"]
     }
   },
   "exclude": ["node_modules"]

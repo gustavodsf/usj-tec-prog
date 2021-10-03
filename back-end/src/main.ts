@@ -9,6 +9,7 @@ const port = process.env.PORT;
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
+  process.env.TZ = 'UTC';
   /**
    * Helmet pode ajudar a proteger seu aplicativo de alguns
    * vulnerabilidades da web configurando cabeçalhos HTTP de forma adequada.

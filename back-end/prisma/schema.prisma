@@ -11,11 +11,11 @@ generator client {
 }
 
 model User {
-  id        Int      @default(autoincrement()) @id
-  email     String   @unique
+  id        Int       @default(autoincrement()) @id
+  email     String    @unique
   name      String?
   password  String
-  createdOn DateTime @default(now())
-  updateOn  DateTime @updatedAt
-  role      String     @default("menber")
+  createdOn DateTime  @default(now())
+  updateOn  DateTime  @updatedAt
+  role      String    @default("menber")
 }
