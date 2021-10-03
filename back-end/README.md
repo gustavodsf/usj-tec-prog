@@ -36,7 +36,7 @@ após  rode o comando `npm run start:dev` para inicializad o servidor de aplica�
 
 ```sh
 .
-├── prism/a           # contém o schema.prisma e as migrations
+├── prisma/           # contém o schema.prisma e as migrations
 ├── src/              # armazena de fato o código do projeto
 ├── test/             # código de configuração do jest
 ├── .env.template    # template o arquivo .env que deve ser criado
