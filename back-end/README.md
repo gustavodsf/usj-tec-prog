@@ -1,13 +1,7 @@
-#### BOV MANAGER
+#### Tec Prog
 Este repositório possui o código para o desenvolvimento do back-end, da aplicação onde atualmente possui o apenas o  cadastro de usuário:
 
-__Tarefa__ - crie um CRUD para o projeto de gestão de uma propriedade rural, abaixo temos alguns exemplos de cadastros possíveis: 
-- CRUD Funcionário
-- CRUD Propriedade
-- CRUD Animais
-- CRUD Estoque
-- CRUD Setores de Manejo
-- .... 
+__Tarefa__ - crie um CRUD para o projeto para o trabalho1, lembrando que terá de fazer a tela desse CRUD como trabalho 2. 
 
 1. Para execução da tarefa crie uma branch da seguinte forma:
 
