@@ -1,4 +1,4 @@
-# bov-manager
+# Tec - Prog
 Software para apoiar o produtor a tomar decisões melhores.
 
 
