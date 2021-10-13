@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "sourceMap": true,
+    "lib": ["es2015"],
+    "paths": {
+      "@user/*": ["src/user/*"],
+      "@auth/*": ["src/auth/*"],
+      "@lprisma/*": ["src/prisma/*"]
+    }
+  },
+  "exclude": ["node_modules"]
+}
