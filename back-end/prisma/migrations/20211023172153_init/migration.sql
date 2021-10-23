@@ -9,5 +9,14 @@ CREATE TABLE "User" (
     "role" TEXT NOT NULL DEFAULT 'menber'
 );
 
+-- CreateTable
+CREATE TABLE "RPG" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "nome" TEXT,
+    "Especie" TEXT,
+    "Classe" TEXT,
+    "Guilda" TEXT
+);
+
 -- CreateIndex
 CREATE UNIQUE INDEX "User_email_key" ON "User"("email");
