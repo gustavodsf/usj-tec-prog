@@ -34,6 +34,7 @@
     "svelte-dts": "^0.3.2",
     "svelte-jester": "^1.1.5",
     "svelte-preprocess": "^4.6.9",
+    "svelte-toasts": "^1.1.2",
     "svelte-transpile-typescript": "^0.1.2",
     "tailwindcss": "^2.0.2",
     "tslib": "^2.1.0",
