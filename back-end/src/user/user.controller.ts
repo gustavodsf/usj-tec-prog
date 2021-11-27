@@ -23,13 +23,13 @@ export class UserController {
   constructor(private userService: UserService) {}
 
   @Get()
-  @UseGuards(JwtAuthGuard)
+  // @UseGuards(JwtAuthGuard)
   getAllUser() {
     return this.userService.findAll();
   }
 
   @Get(':id')
-  @UseGuards(JwtAuthGuard)
+  // @UseGuards(JwtAuthGuard)
   getUserBuyId(@Param('id') id: number) {
     return this.userService
       .findById(id)
