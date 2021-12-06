@@ -1,3 +1,18 @@
+<main>
+	<ToastContainer placement="bottom-right" let:data={data}>
+    <FlatToast {data} /> <!-- Provider template for your toasts -->
+  </ToastContainer>
+
+	{#if loading  }
+		<p> loading..... </p>
+	{/if}
+	<MyForm />	
+<!--	<ul>
+		{#each $userNames as userName}
+			<li>{userName}</li>
+		{/each}
+	</ul>-->
+</main>
 <script>
 	import { onMount } from "svelte";
 	import { apiData, userNames } from './store.js';
@@ -29,25 +44,5 @@
 	});
 </script>
 
-<main>
-	<ToastContainer placement="bottom-right" let:data={data}>
-    <FlatToast {data} /> <!-- Provider template for your toasts -->
-  </ToastContainer>
-
-
-	<MyForm />
-
-	<h1>UniSãoJosé usuários</h1>
-	{#if loading  }
-		<p> loading..... </p>
-	{/if}	
-	<ul>
-		{#each $userNames as userName}
-			<li>{userName}</li>
-		{/each}
-	</ul>
-</main>
-
 <style>
-
 </style>
