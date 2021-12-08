@@ -88,10 +88,10 @@
 		<h4 class="animation a2">Registre num mundo de aventuras agora!!!</h4>
 	  </div>
 	  <div class="form">
-		<input type="name" class="form-field animation a3" placeholder="Digite seu nome">
-		<input type="email" class="form-field animation a4" placeholder="Digite seu e-mail">
-		<input type="password" class="form-field animation a5" placeholder="Digite sua Senha">
-		<input name="role" class="form-field animation a5" bind:value={role} placeholder="Digite sua classe">
+		<input type="name" bind:value={name} class="form-field animation a3" placeholder="Digite seu nome">
+		<input type="email"bind:value={email}  class="form-field animation a4" placeholder="Digite seu e-mail">
+		<input type="password"bind:value={password}  class="form-field animation a5" placeholder="Digite sua Senha">
+		<input name="role" bind:value={role} class="form-field animation a5"  placeholder="Digite sua classe">
 		<p class="animation a5"><a href="#">Forgot Password</a></p>
 		<button class="animation a6" on:click={handleSubmit}>REGISTRAR</button>
 	  </div>
